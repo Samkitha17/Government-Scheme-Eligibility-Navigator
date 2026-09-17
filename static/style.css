@@ -1,0 +1,1363 @@
+/* ==========================================
+   GOVERNMENT SCHEME NAVIGATOR
+   COMPLETE DESIGN
+========================================== */
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    color: #172554;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef6ff,
+            #ffffff,
+            #effbf5
+        );
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+    min-height: 70px;
+
+    padding: 0 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            90deg,
+            #071b45,
+            #123875
+        );
+
+    color: white;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+.header-text {
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   PROFILE PAGE
+========================================== */
+
+.profile-page {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(37, 99, 235, 0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(34, 197, 94, 0.10),
+            transparent 30%
+        ),
+
+        #f5f9ff;
+}
+
+
+.profile-main {
+    width: 100%;
+
+    min-height: calc(100vh - 140px);
+
+    padding: 50px 8% 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* PROFILE HEADER */
+
+.profile-header {
+    text-align: center;
+
+    max-width: 800px;
+
+    margin-bottom: 35px;
+}
+
+
+.profile-icon {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+.profile-header h1 {
+    font-size: 38px;
+
+    margin: 5px 0 12px;
+}
+
+
+.profile-header p {
+    font-size: 18px;
+
+    color: #64748b;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   PROFILE FORM
+========================================== */
+
+.profile-form {
+    width: 100%;
+
+    max-width: 1100px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(15, 23, 42, 0.10);
+}
+
+
+/* FORM SECTION */
+
+.form-section {
+    padding-bottom: 30px;
+
+    margin-bottom: 30px;
+
+    border-bottom:
+        1px solid #e2e8f0;
+}
+
+
+.form-section h2 {
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    font-size: 23px;
+
+    color: #142452;
+}
+
+
+/* GRID */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.form-group label {
+    font-weight: bold;
+
+    margin-bottom: 9px;
+
+    color: #334155;
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    transition: 0.2s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    outline: none;
+
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+/* SELECTED CATEGORY */
+
+.selected-value {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #e8f0fe;
+
+    color: #1d4ed8;
+
+    font-weight: bold;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   PRIVACY
+========================================== */
+
+.privacy-box {
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    border-left:
+        5px solid #2563eb;
+
+    color: #334155;
+
+    margin-bottom: 30px;
+}
+
+
+.privacy-box p {
+
+    margin:
+        7px 0 0 28px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   FIND BUTTON
+========================================== */
+
+.form-button-area {
+
+    text-align: center;
+}
+
+
+.find-button {
+
+    padding:
+        16px 45px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.find-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* ==========================================
+   RESULT PAGE
+========================================== */
+
+.result-page {
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(37, 99, 235, 0.10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(34, 197, 94, 0.10),
+            transparent 30%
+        ),
+
+        #f6f9fd;
+}
+
+
+.result-main {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding:
+        55px 25px 70px;
+
+    text-align: center;
+}
+
+
+/* RESULT HEADER */
+
+.result-header {
+
+    margin-bottom: 35px;
+}
+
+
+.result-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 8px;
+}
+
+
+.result-header h1 {
+
+    font-size: 38px;
+
+    margin: 5px 0 10px;
+}
+
+
+.result-header p {
+
+    color: #64748b;
+
+    font-size: 17px;
+}
+
+
+/* ==========================================
+   PROFILE SUMMARY
+========================================== */
+
+.result-profile {
+
+    background: white;
+
+    padding: 25px 30px;
+
+    border-radius: 16px;
+
+    margin-bottom: 40px;
+
+    box-shadow:
+        0 6px 25px
+        rgba(15, 23, 42, 0.08);
+
+    text-align: left;
+}
+
+
+.result-profile h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+}
+
+
+.profile-details {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+
+.profile-details div {
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.profile-details strong {
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+.profile-details span {
+
+    font-weight: bold;
+
+    color: #172554;
+
+    word-break: break-word;
+}
+
+
+/* ==========================================
+   RECOMMENDATIONS
+========================================== */
+
+.recommendation-area > h2 {
+
+    margin-bottom: 25px;
+
+    font-size: 28px;
+}
+
+
+/* RESULT CARD */
+
+.result-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    text-align: left;
+
+    box-shadow:
+        0 7px 25px
+        rgba(15, 23, 42, 0.09);
+
+    border:
+        1px solid #e2e8f0;
+}
+
+
+.scheme-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+
+.scheme-top h2 {
+
+    margin:
+        0 0 8px;
+
+    font-size: 24px;
+}
+
+
+.scheme-top p {
+
+    color: #64748b;
+
+    line-height: 1.5;
+}
+
+
+/* MATCH SCORE */
+
+.match-score {
+
+    min-width: 110px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: #e8f0fe;
+
+    color: #1d4ed8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.match-score strong {
+
+    font-size: 25px;
+}
+
+
+.match-score span {
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+/* STATUS */
+
+.status {
+
+    display: inline-block;
+
+    margin:
+        10px 0 20px;
+
+    padding:
+        9px 15px;
+
+    border-radius: 20px;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+}
+
+
+/* REASON */
+
+.reason-section {
+
+    padding:
+        18px 0;
+
+    border-top:
+        1px solid #e2e8f0;
+}
+
+
+.reason-section h3 {
+
+    margin-top: 0;
+}
+
+
+.reason-section ul {
+
+    padding-left: 20px;
+}
+
+
+.reason-section li {
+
+    margin:
+        9px 0;
+
+    color: #475569;
+}
+
+
+/* DOCUMENTS */
+
+.document-section {
+
+    padding-top: 10px;
+
+    border-top:
+        1px solid #e2e8f0;
+}
+
+
+.documents {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.documents span {
+
+    padding:
+        9px 13px;
+
+    border-radius: 8px;
+
+    background: #f1f5f9;
+
+    font-size: 14px;
+
+    color: #475569;
+}
+
+
+/* ==========================================
+   NO RESULT
+========================================== */
+
+.no-result {
+
+    background: white;
+
+    padding: 50px 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+.no-result div {
+
+    font-size: 50px;
+}
+
+
+.no-result p {
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   PASSPORT BUTTON
+========================================== */
+
+.passport-form {
+
+    margin:
+        35px 0 15px;
+}
+
+
+.passport-button {
+
+    padding:
+        15px 30px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #6d28d9
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.passport-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(124, 58, 237, 0.25);
+}
+
+
+/* START AGAIN */
+
+.start-again {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding:
+        12px 25px;
+
+    border-radius: 9px;
+
+    background: #172554;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    min-height: 70px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    background: #071b45;
+
+    color: white;
+
+    font-size: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .profile-main {
+
+        padding:
+            40px 5%;
+    }
+
+
+    .profile-form {
+
+        padding: 30px;
+    }
+
+
+    .profile-details {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .result-main {
+
+        max-width: 95%;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+
+
+    .logo {
+
+        font-size: 19px;
+    }
+
+
+    .profile-main {
+
+        padding:
+            30px 15px;
+    }
+
+
+    .profile-header h1 {
+
+        font-size: 29px;
+    }
+
+
+    .profile-form {
+
+        padding: 22px;
+
+        border-radius: 15px;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .full-width {
+
+        grid-column: auto;
+    }
+
+
+    .result-main {
+
+        padding:
+            35px 15px;
+    }
+
+
+    .result-header h1 {
+
+        font-size: 29px;
+    }
+
+
+    .profile-details {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .scheme-top {
+
+        flex-direction: column;
+    }
+
+
+    .match-score {
+
+        align-self: flex-start;
+    }
+
+
+    .result-card {
+
+        padding: 22px;
+    }
+
+
+    footer {
+
+        font-size: 12px;
+
+        gap: 10px;
+    }
+
+}
+/* First page full screen */
+
+body {
+    min-height: 100vh;
+}
+
+body:not(.profile-page):not(.result-page) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body:not(.profile-page):not(.result-page) .hero {
+    flex: 1;
+}
+
+body:not(.profile-page):not(.result-page) .category-section {
+    flex: 1;
+}
+
+body:not(.profile-page):not(.result-page) footer {
+    margin-top: auto;
+}
+/* ==========================================
+   NEW HOME PAGE
+   ONLY FOR FIRST PAGE
+========================================== */
+
+
+.home-page {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eaf3ff,
+            #ffffff,
+            #eafaf1
+        );
+
+    color: #172554;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* HEADER */
+
+.home-header {
+    height: 72px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #0b2a5b;
+
+    color: white;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.home-logo {
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+.home-tagline {
+    font-size: 15px;
+}
+
+
+/* MAIN */
+
+.home-main {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* CENTER BOX */
+
+.welcome-box {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 40px
+        rgba(15, 23, 42, 0.12);
+}
+
+
+/* ICON */
+
+.welcome-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e8f0fe;
+
+    font-size: 38px;
+}
+
+
+/* TITLE */
+
+.welcome-box h1 {
+
+    margin: 10px 0;
+
+    font-size: 32px;
+
+    color: #102a56;
+}
+
+
+.welcome-text {
+
+    color: #64748b;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 28px;
+}
+
+
+/* DETAILS BOX */
+
+.details-box {
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    text-align: left;
+}
+
+
+.details-box h2 {
+
+    text-align: center;
+
+    margin: 0 0 8px;
+
+    font-size: 22px;
+
+    color: #102a56;
+}
+
+
+.details-box > p {
+
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 25px;
+}
+
+
+/* LABEL */
+
+.details-box label {
+
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #334155;
+}
+
+
+/* SELECT */
+
+.details-box select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: white;
+
+    font-size: 16px;
+
+    color: #334155;
+
+    cursor: pointer;
+}
+
+
+.details-box select:focus {
+
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+/* CONTINUE BUTTON */
+
+.details-box button {
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.details-box button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* FEATURES */
+
+.home-features {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+
+.home-features div {
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    font-size: 13px;
+}
+
+
+/* FOOTER */
+
+.home-footer {
+
+    padding: 18px;
+
+    text-align: center;
+
+    background: #0b2a5b;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .home-header {
+
+        height: auto;
+
+        padding: 16px;
+
+        flex-direction: column;
+
+        gap: 7px;
+
+        text-align: center;
+    }
+
+
+    .home-logo {
+
+        font-size: 20px;
+    }
+
+
+    .home-main {
+
+        padding: 25px 15px;
+    }
+
+
+    .welcome-box {
+
+        padding: 25px 18px;
+
+        border-radius: 17px;
+    }
+
+
+    .welcome-box h1 {
+
+        font-size: 26px;
+    }
+
+
+    .details-box {
+
+        padding: 20px;
+    }
+
+}

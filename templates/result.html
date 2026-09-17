@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Recommended Government Schemes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="result-page">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            🇮🇳
+            <span>Government Scheme Navigator</span>
+        </div>
+
+        <div class="header-text">
+            Find. Match. Benefit.
+        </div>
+
+    </header>
+
+
+    <!-- RESULT MAIN -->
+
+    <main class="result-main">
+
+
+        <!-- TITLE -->
+
+        <div class="result-header">
+
+            <div class="result-icon">
+                🎯
+            </div>
+
+            <h1>Your Recommended Schemes</h1>
+
+            <p>
+                We found schemes based on your profile.
+            </p>
+
+        </div>
+
+
+        <!-- PROFILE SUMMARY -->
+
+        <div class="result-profile">
+
+            <h2>👤 Your Profile</h2>
+
+            <div class="profile-details">
+
+                <div>
+                    <strong>Category</strong>
+                    <span>{{ category }}</span>
+                </div>
+
+                <div>
+                    <strong>Age</strong>
+                    <span>{{ age }}</span>
+                </div>
+
+                <div>
+                    <strong>Income</strong>
+                    <span>{{ income }}</span>
+                </div>
+
+                <div>
+                    <strong>State</strong>
+                    <span>{{ state }}</span>
+                </div>
+
+                <div>
+                    <strong>Gender</strong>
+                    <span>{{ gender }}</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECOMMENDATIONS -->
+
+        <div class="recommendation-area">
+
+            <h2>
+                ⭐ Top Recommendations
+            </h2>
+
+
+            {% if recommendations %}
+
+
+                {% for scheme in recommendations %}
+
+                <div class="result-card">
+
+
+                    <div class="scheme-top">
+
+                        <div>
+
+                            <h2>
+                                {{ scheme.name }}
+                            </h2>
+
+                            <p>
+                                {{ scheme.benefit }}
+                            </p>
+
+                        </div>
+
+
+                        <div class="match-score">
+
+                            <strong>
+                                {{ scheme.score }}%
+                            </strong>
+
+                            <span>
+                                Match
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    <div class="status">
+
+                        {% if scheme.status == "Eligible" %}
+
+                            🟢 <strong>Eligible</strong>
+
+                        {% elif scheme.status == "Potentially Eligible" %}
+
+                            🟡 <strong>Potentially Eligible</strong>
+
+                        {% else %}
+
+                            🟠 <strong>Needs Verification</strong>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- WHY -->
+
+                    <div class="reason-section">
+
+                        <h3>
+                            💡 Why We Recommended This
+                        </h3>
+
+                        <ul>
+
+                            {% for reason in scheme.reasons %}
+
+                            <li>
+                                ✓ {{ reason }}
+                            </li>
+
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- DOCUMENTS -->
+
+                    <div class="document-section">
+
+                        <h3>
+                            📄 Required Documents
+                        </h3>
+
+                        <div class="documents">
+
+                            {% for document in scheme.documents %}
+
+                            <span>
+                                📄 {{ document }}
+                            </span>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                {% endfor %}
+
+
+            {% else %}
+
+                <div class="no-result">
+
+                    <div>
+                        😔
+                    </div>
+
+                    <h2>
+                        No Matching Schemes Found
+                    </h2>
+
+                    <p>
+                        We could not find suitable schemes
+                        for the details you provided.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+
+        </div>
+
+
+        <!-- PASSPORT -->
+
+        {% if recommendations %}
+
+        <form action="/passport"
+              method="POST"
+              class="passport-form">
+
+            <input type="hidden"
+                   name="category"
+                   value="{{ category }}">
+
+            <input type="hidden"
+                   name="age"
+                   value="{{ age }}">
+
+            <input type="hidden"
+                   name="state"
+                   value="{{ state }}">
+
+            <input type="hidden"
+                   name="gender"
+                   value="{{ gender }}">
+
+            <button type="submit"
+                    class="passport-button">
+
+                🪪 View My Scheme Passport
+
+            </button>
+
+        </form>
+
+        {% endif %}
+
+
+        <!-- START AGAIN -->
+
+        <a href="/"
+           class="start-again">
+
+            ← Start Again
+
+        </a>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            🔒 Secure & Private
+        </div>
+
+        <div>•</div>
+
+        <div>
+            ✓ Trusted Information
+        </div>
+
+        <div>•</div>
+
+        <div>
+            ₹ Free to Use
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

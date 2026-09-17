@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Scheme Passport</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="result-page">
+
+
+<header class="header">
+
+    <div class="logo">
+        🇮🇳
+        <span>Government Scheme Navigator</span>
+    </div>
+
+    <div class="header-text">
+        Find. Match. Benefit.
+    </div>
+
+</header>
+
+
+<main class="result-main">
+
+
+    <div class="result-header">
+
+        <div class="result-icon">
+            🪪
+        </div>
+
+        <h1>
+            My Scheme Passport
+        </h1>
+
+        <p>
+            Your personalized government scheme summary
+        </p>
+
+    </div>
+
+
+    <!-- PROFILE -->
+
+    <div class="result-profile">
+
+        <h2>
+            👤 Your Profile
+        </h2>
+
+        <div class="profile-details">
+
+
+            <div>
+
+                <strong>
+                    Category
+                </strong>
+
+                <span>
+                    {{ category }}
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Age
+                </strong>
+
+                <span>
+                    {{ age }}
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    State
+                </strong>
+
+                <span>
+                    {{ state }}
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Gender
+                </strong>
+
+                <span>
+                    {{ gender }}
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="result-profile">
+
+        <h2>
+            📊 Scheme Summary
+        </h2>
+
+
+        <div class="profile-details">
+
+
+            <div>
+
+                <strong>
+                    Recommended Schemes
+                </strong>
+
+                <span>
+                    {{ total_schemes }}
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Strong Matches
+                </strong>
+
+                <span>
+                    🟢 {{ eligible_count }}
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Potential Matches
+                </strong>
+
+                <span>
+                    🟡 {{ potential_count }}
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- SCHEMES -->
+
+    <div class="recommendation-area">
+
+        <h2>
+            ⭐ Your Recommended Schemes
+        </h2>
+
+
+        {% if recommendations %}
+
+
+            {% for scheme in recommendations %}
+
+
+            <div class="result-card">
+
+
+                <div class="scheme-top">
+
+                    <div>
+
+                        <h2>
+                            {{ scheme.name }}
+                        </h2>
+
+                        <p>
+                            {{ scheme.benefit }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="match-score">
+
+                        <strong>
+                            {{ scheme.score }}%
+                        </strong>
+
+                        <span>
+                            Match
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status">
+
+                    {% if scheme.status == "Eligible" %}
+
+                        🟢
+                        <strong>
+                            Eligible
+                        </strong>
+
+                    {% else %}
+
+                        🟡
+                        <strong>
+                            Potentially Eligible
+                        </strong>
+
+                    {% endif %}
+
+                </div>
+
+
+            </div>
+
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <div class="no-result">
+
+                <div>
+                    😔
+                </div>
+
+                <h2>
+                    No Matching Schemes
+                </h2>
+
+                <p>
+                    No matching schemes were found
+                    for your profile.
+                </p>
+
+            </div>
+
+
+        {% endif %}
+
+    </div>
+
+
+    <a href="/" class="start-again">
+
+        ← Start Again
+
+    </a>
+
+
+</main>
+
+
+<footer>
+
+    <div>
+        🔒 Secure & Private
+    </div>
+
+    <div>
+        •
+    </div>
+
+    <div>
+        ✓ Trusted Information
+    </div>
+
+    <div>
+        •
+    </div>
+
+    <div>
+        ₹ Free to Use
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
